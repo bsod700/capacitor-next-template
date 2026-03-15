@@ -15,19 +15,102 @@ Capacitor plugins included: `app`, `camera`, `keyboard`, `preferences`, `splash-
 
 ---
 
-## Start a new app from this template
+## Creating a new app from this template
+
+### Prerequisites
+
+Make sure you have these installed before starting:
+
+| Tool | Why | Install |
+|------|-----|---------|
+| [Node.js 22+](https://nodejs.org) | Runtime | `brew install node` |
+| [pnpm](https://pnpm.io) | Package manager | `npm i -g pnpm` |
+| [GitHub CLI](https://cli.github.com) | Clone the template | `brew install gh` |
+| [Xcode](https://apps.apple.com/app/xcode/id497799835) | iOS development | App Store |
+| [Android Studio](https://developer.android.com/studio) | Android development | Download |
+| [JDK 17+](https://adoptium.net) | Required for Android | `brew install temurin` |
+| [CocoaPods](https://cocoapods.org) | iOS dependencies | `sudo gem install cocoapods` |
+
+> You only need Xcode for iOS and Android Studio + JDK for Android. You can skip either if you're targeting one platform only.
+
+---
+
+### Step 1 — Authenticate GitHub CLI (first time only)
+
+```bash
+gh auth login
+```
+
+Follow the prompts — it opens your browser to authorize. Do this once and you're set forever.
+
+---
+
+### Step 2 — Create your new app
+
+Run this single command (replace `my-new-app` with your repo name):
 
 ```bash
 gh repo create my-new-app --template bsod700/capacitor-next-template --clone && cd my-new-app && pnpm install && pnpm setup
 ```
 
-`pnpm setup` is an interactive CLI that handles everything:
+This will:
+- Create a new GitHub repo from the template
+- Clone it to your machine
+- Install all dependencies
+- Launch the interactive setup wizard
 
-1. Checks your environment (Java, Xcode, CocoaPods, adb)
-2. Asks for your app name and auto-suggests the bundle ID
-3. Adds Android and/or iOS platforms (yes/no)
-4. Offers to open Android Studio or Xcode when done
-5. Cleans itself up — the setup script removes itself from your app
+---
+
+### Step 3 — Answer the setup questions
+
+The setup wizard walks you through everything:
+
+```
+  New Capacitor App Setup  ·  template v1.0.0
+
+  Checking your environment...
+  Java (JDK)    ✓
+  Android (adb) ✓
+  Xcode         ✓
+  CocoaPods     ✓
+
+◆  What is your app name?
+│  Travel App
+
+◆  Bundle ID (reverse-domain format)?
+│  com.yourcompany.travelapp   ← auto-suggested, just edit "yourcompany"
+
+◆  Add Android platform?
+│  ● Yes / ○ No
+
+◆  Add iOS platform?
+│  ● Yes / ○ No
+
+◇  Config files updated
+◇  Android platform added
+◇  iOS platform added
+
+◆  Open in IDE now?
+│  ● Open Xcode
+│  ○ Open Android Studio
+│  ○ Skip
+
+  You're all set!  App: Travel App  ·  ID: com.yourcompany.travelapp
+```
+
+> Any tool that's missing will be detected automatically and its platform option will be skipped with a clear message — no crashes.
+
+---
+
+### Step 4 — Run your app
+
+```bash
+pnpm mobile:android   # run on Android device / emulator
+pnpm mobile:ios       # run on iOS device / simulator
+pnpm dev              # web browser at localhost:3000
+```
+
+That's it — your app is running.
 
 ---
 
