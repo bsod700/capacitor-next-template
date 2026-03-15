@@ -1,0 +1,60 @@
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "npx serve@latest out",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "mobile": "next build && cap sync",
+    "mobile:ios": "next build && cap sync && cap run ios",
+    "mobile:android": "next build && cap sync && cap run android",
+    "mobile:ios:studio": "next build && cap sync && cap open ios",
+    "mobile:android:studio": "next build && cap sync && cap open android",
+    "mobile:live:android": "NODE_ENV=development DEV_HOST=$(ipconfig getifaddr en0 2>/dev/null || ipconfig getifaddr en1 2>/dev/null || echo localhost) cap copy android && cap run android",
+    "mobile:live:ios": "NODE_ENV=development DEV_HOST=$(ipconfig getifaddr en0 2>/dev/null || ipconfig getifaddr en1 2>/dev/null || echo localhost) cap copy ios && cap run ios",
+    "setup": "node scripts/setup.mjs",
+    "release": "bumpp --tag 'v%s' --commit 'chore: release v%s' --push"
+  },
+  "dependencies": {
+    "@capacitor/app": "^8.0.1",
+    "@capacitor/camera": "^8.0.2",
+    "@capacitor/core": "^8.2.0",
+    "@capacitor/keyboard": "^8.0.1",
+    "@capacitor/preferences": "^8.0.1",
+    "@capacitor/splash-screen": "^8.0.1",
+    "@capacitor/status-bar": "^8.0.1",
+    "konsta": "^5.0.7",
+    "next": "^16.1.6",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^8.2.0",
+    "@capacitor/cli": "^8.2.0",
+    "@capacitor/ios": "^8.2.0",
+    "@clack/prompts": "^0.9.1",
+    "@tailwindcss/postcss": "^4.1.8",
+    "@types/node": "^22.15.29",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "bumpp": "^10.1.0",
+    "eslint": "^9.28.0",
+    "eslint-config-next": "^16.1.6",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^4.1.8",
+    "typescript": "^5.8.3"
+  },
+  "packageManager": "pnpm@10.29.3",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "@tailwindcss/oxide",
+      "lightningcss",
+      "sharp",
+      "unrs-resolver"
+    ]
+  }
+}
