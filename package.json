@@ -36,7 +36,7 @@
     "@capacitor/cli": "^8.2.0",
     "@capacitor/ios": "^8.2.0",
     "@clack/prompts": "^0.9.1",
-    "@tailwindcss/postcss": "^4.1.8",
+    "@tailwindcss/postcss": "^4.2.4",
     "@types/node": "^22.15.29",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
@@ -44,7 +44,7 @@
     "eslint": "^9.28.0",
     "eslint-config-next": "^16.1.6",
     "postcss": "^8.5.4",
-    "tailwindcss": "^4.1.8",
+    "tailwindcss": "^4.2.4",
     "typescript": "^5.8.3"
   },
   "packageManager": "pnpm@10.29.3",
