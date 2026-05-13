@@ -9,7 +9,7 @@ All rendering happens client-side; the `out/` directory is the deployable artifa
 ## 2. Tech Stack
 
 - **Next.js 16** — App Router, `output: 'export'`, `trailingSlash: true`
-- **React 19** + **TypeScript 5** strict mode
+- **React 19** + **TypeScript 6** strict mode
 - **Konsta UI 5** — iOS/Material adaptive components (`konsta/react`)
 - **Tailwind CSS v4** — CSS-first config via `postcss.config.mjs`, no `tailwind.config.*`
 - **Capacitor 8** — native bridge; plugins: `@capacitor/app`, `@capacitor/camera`, `@capacitor/keyboard`, `@capacitor/preferences`, `@capacitor/splash-screen`, `@capacitor/status-bar`
@@ -30,6 +30,7 @@ public/               # PWA manifest, favicon, logo (served as-is)
 capacitor.config.ts   # Native app config (appId, plugins, live-reload server)
 next.config.ts        # Static export config
 postcss.config.mjs    # Tailwind v4 PostCSS integration
+eslint.config.mjs     # ESLint flat config (eslint-config-next)
 tsconfig.json         # Path alias @/* → ./src/*
 scripts/              # setup.mjs — interactive project rename script
 ```

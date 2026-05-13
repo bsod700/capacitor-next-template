@@ -8,7 +8,7 @@
 - **Capacitor 8** — iOS & Android native bridge
 - **Konsta UI** — Mobile-first Tailwind components (iOS/Material style)
 - **Tailwind CSS v4** — Utility-first styling
-- **TypeScript 5** — Full type safety
+- **TypeScript 6** — Full type safety
 - **pnpm** — Fast, disk-efficient package manager
 
 Capacitor plugins included: `app`, `camera`, `keyboard`, `preferences`, `splash-screen`, `status-bar`
