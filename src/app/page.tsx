@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { Capacitor } from '@capacitor/core';
 import { App } from '@capacitor/app';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { Keyboard } from '@capacitor/keyboard';
@@ -20,6 +21,8 @@ export default function Home() {
   const [photo, setPhoto] = useState<string | null>(null);
 
   useEffect(() => {
+    if (!Capacitor.isNativePlatform()) return;
+
     SplashScreen.hide().catch(() => {});
 
     const backHandler = App.addListener(
